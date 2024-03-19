@@ -1,0 +1,72 @@
+{
+    "method": [
+        1
+    ],
+    "antisym": [
+        false
+    ],
+    "window_func": "hamming",
+    "conf_interval": 0.95,
+    "average_windows": true,
+    "n_jobs": 1,
+    "seeds": {
+        "grouping": [
+            "ch_names",
+            "ch_reref_types",
+            "ch_hemispheres",
+            "ch_epoch_orders"
+        ],
+        "eligible_entries": {
+            "ch_types": [
+                "ecog"
+            ]
+        }
+    },
+    "targets": {
+        "grouping": [
+            "ch_names",
+            "ch_reref_types",
+            "ch_hemispheres",
+            "ch_epoch_orders"
+        ],
+        "eligible_entries": {
+            "ch_types": [
+                "dbs"
+            ]
+        }
+    },
+    "freq_bands": {
+        "all": [
+            3.0,
+            100.0
+        ],
+        "theta": [
+            4.0,
+            8.0
+        ],
+        "alpha": [
+            9.0,
+            12.0
+        ],
+        "low_frequency": [
+            4.0,
+            12.0
+        ],
+        "low_beta": [
+            13.0,
+            20.0
+        ],
+        "high_beta": [
+            21.0,
+            35.0
+        ],
+        "all_beta": [
+            13.0,
+            35.0
+        ],
+        "gamma": [
+            60.0,
+            90.0
+        ]
+    }
+}

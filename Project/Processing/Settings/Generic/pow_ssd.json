@@ -1,0 +1,84 @@
+{
+    "channels": {
+        "grouping": [
+            "ch_types",
+            "ch_reref_types",
+            "ch_hemispheres"
+        ],
+        "eligible_entries": {
+            "ch_types": [
+                "ecog",
+                "dbs"
+            ]
+        }
+    },
+    "filt_params_signal": {
+        "theta": {
+            "l_freq": 4,
+            "h_freq": 8,
+            "l_trans_bandwidth": 1,
+            "h_trans_bandwidth": 1
+        },
+        "alpha": {
+            "l_freq": 8,
+            "h_freq": 12,
+            "l_trans_bandwidth": 1,
+            "h_trans_bandwidth": 1
+        },
+        "low_beta": {
+            "l_freq": 12,
+            "h_freq": 20,
+            "l_trans_bandwidth": 1,
+            "h_trans_bandwidth": 1
+        },
+        "high_beta": {
+            "l_freq": 20,
+            "h_freq": 30,
+            "l_trans_bandwidth": 1,
+            "h_trans_bandwidth": 1
+        }
+    },
+    "filt_params_noise": {
+        "theta": {
+            "l_freq": 3,
+            "h_freq": 9,
+            "l_trans_bandwidth": 1,
+            "h_trans_bandwidth": 1
+        },
+        "alpha": {
+            "l_freq": 7,
+            "h_freq": 13,
+            "l_trans_bandwidth": 1,
+            "h_trans_bandwidth": 1
+        },
+        "low_beta": {
+            "l_freq": 11,
+            "h_freq": 21,
+            "l_trans_bandwidth": 1,
+            "h_trans_bandwidth": 1
+        },
+        "high_beta": {
+            "l_freq": 19,
+            "h_freq": 31,
+            "l_trans_bandwidth": 1,
+            "h_trans_bandwidth": 1
+        }
+    },
+    "regularisation": null,
+    "covariance_params": null,
+    "group_ranks": [
+        4,
+        3
+    ],
+    "transformed_ch_names": null,
+    "plot": false,
+    "power": {
+        "fmin": 3.0,
+        "fmax": 150.0,
+        "bandwidth": 5.0,
+        "adaptive": false,
+        "low_bias": true,
+        "normalization": "full",
+        "n_jobs": 10
+    }
+}

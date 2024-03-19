@@ -1,0 +1,18 @@
+[
+    {
+        "cohort": "ECOG_LFP",
+        "sub": "01",
+        "ses": "MedOff",
+        "task": "Rest",
+        "acq": "StimOff",
+        "run": "1"
+    },
+    {
+        "cohort": "ECOG_LFP",
+        "sub": "01",
+        "ses": "MedOn",
+        "task": "Rest",
+        "acq": "StimOff",
+        "run": "1"
+    }
+]

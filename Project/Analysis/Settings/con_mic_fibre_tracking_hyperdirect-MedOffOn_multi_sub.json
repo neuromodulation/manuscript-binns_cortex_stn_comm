@@ -1,0 +1,236 @@
+{
+    "result_types": {
+        "append": [
+            [
+                "connectivity-med_analysis-con_mim_mic_whole_topographies"
+            ]
+        ]
+    },
+    "identical_keys": [
+        "windows",
+        "frequencies"
+    ],
+    "extract_from_dicts": {
+        "metadata": [
+            "sub",
+            "ses",
+            "med",
+            "stim",
+            "task",
+            "run"
+        ]
+    },
+    "discard_keys": [
+        "processing_steps",
+        "sampling_frequency",
+        "subject_info"
+    ],
+    "steps": [
+        {
+            "method": "absolute",
+            "data_keys": [
+                "connectivity-mic_topographies"
+            ],
+            "eligible_entries": null
+        },
+        {
+            "method": "average_within_nodes",
+            "data_keys": [
+                "connectivity-mic_topographies"
+            ],
+            "average_dimension": "windows",
+            "eligible_entries": null,
+            "ignore_nan": false,
+            "var_measures": null
+        },
+        {
+            "method": "average_over_nodes",
+            "over_key": "run",
+            "data_keys": [
+                "connectivity-mic_topographies"
+            ],
+            "group_keys": [
+                "ch_names",
+                "seed_types",
+                "seed_regions",
+                "seed_reref_types",
+                "seed_hemispheres",
+                "target_types",
+                "target_regions",
+                "target_reref_types",
+                "target_hemispheres",
+                "node_lateralisation",
+                "node_epoch_orders",
+                "sub",
+                "ses",
+                "med",
+                "stim",
+                "task"
+            ],
+            "eligible_entries": null,
+            "ignore_nan": false,
+            "var_measures": null,
+            "identical_keys": [
+                "connectivity-mic_topographies_dimensions",
+                "frequencies",
+                "seed_coords",
+                "target_coords"
+            ]
+        },
+        {
+            "method": "average_over_nodes",
+            "over_key": "ses",
+            "data_keys": [
+                "connectivity-mic_topographies"
+            ],
+            "group_keys": [
+                "ch_names",
+                "seed_types",
+                "seed_regions",
+                "seed_reref_types",
+                "seed_hemispheres",
+                "target_types",
+                "target_regions",
+                "target_reref_types",
+                "target_hemispheres",
+                "node_lateralisation",
+                "node_epoch_orders",
+                "sub",
+                "med",
+                "stim",
+                "task",
+                "run"
+            ],
+            "eligible_entries": null,
+            "ignore_nan": false,
+            "var_measures": null,
+            "identical_keys": [
+                "connectivity-mic_topographies_dimensions",
+                "frequencies",
+                "seed_coords",
+                "target_coords"
+            ]
+        },
+        {
+            "method": "project_to_mesh",
+            "mesh": "mni_icbm152_nlin_asym_09b",
+            "coords_key": "ch_coords",
+            "pin_to_hemisphere": "right",
+            "eligible_entries": {
+                "ch_types": "ecog"
+            }
+        },
+        {
+            "method": "track_fibres_within_radius",
+            "atlas": "holographic_hyperdirect_filtered",
+            "seeds_key": "ch_names",
+            "targets_key": [
+                "seed_names",
+                "target_names"
+            ],
+            "seeds_coords_key": "ch_coords",
+            "targets_coords_key": [
+                "seed_coords",
+                "target_coords"
+            ],
+            "sphere_radii": {
+                "ecog": 10,
+                "dbs": 3
+            },
+            "seeds_types_key": "ch_types",
+            "targets_types_key": [
+                "seed_types",
+                "target_types"
+            ],
+            "allow_bypassing_fibres": false,
+            "pin_to_hemisphere": "right",
+            "eligible_entries": null
+        },
+        {
+            "method": "track_fibres_within_radius",
+            "atlas": "holographic_hyperdirect_filtered",
+            "seeds_key": "ch_names",
+            "targets_key": null,
+            "seeds_coords_key": "ch_coords",
+            "targets_coords_key": null,
+            "sphere_radii": {
+                "ecog": 10,
+                "dbs": 3
+            },
+            "seeds_types_key": "ch_types",
+            "targets_types_key": null,
+            "allow_bypassing_fibres": false,
+            "pin_to_hemisphere": "right",
+            "eligible_entries": null
+        },
+        {
+            "method": "isolate_bands",
+            "data_keys": [
+                "connectivity-mic_topographies"
+            ],
+            "isolate_dimension": "frequencies",
+            "bands": {
+                "all_beta": [
+                    12.0,
+                    35.0
+                ],
+                "low_beta": [
+                    12.0,
+                    20.0
+                ],
+                "high_beta": [
+                    20.0,
+                    30.0
+                ]
+            },
+            "eligible_entries": null
+        },
+        {
+            "method": "find_value",
+            "value_method": "max",
+            "data_keys": [
+                "connectivity-mic_topographies"
+            ],
+            "find_in_dimension": "frequencies",
+            "eligible_entries": null
+        },
+        {
+            "method": "average_within_nodes",
+            "data_keys": [
+                "connectivity-mic_topographies"
+            ],
+            "average_dimension": "frequencies",
+            "eligible_entries": null,
+            "ignore_nan": false,
+            "var_measures": null
+        },
+        {
+            "method": "gaussianise",
+            "over_key": "sub",
+            "data_keys": [
+                "connectivity-mic_topographies",
+                "connectivity-mic_topographies_max(frequencies)"
+            ],
+            "gaussianise_dimension": null,
+            "group_keys": [
+                "frequencies_band_labels",
+                "ch_types",
+                "seed_types",
+                "seed_regions",
+                "seed_reref_types",
+                "target_types",
+                "target_regions",
+                "target_reref_types",
+                "node_lateralisation",
+                "node_epoch_orders",
+                "ses",
+                "med",
+                "stim",
+                "task",
+                "run"
+            ],
+            "eligible_entries": null,
+            "identical_keys": null
+        }
+    ]
+}

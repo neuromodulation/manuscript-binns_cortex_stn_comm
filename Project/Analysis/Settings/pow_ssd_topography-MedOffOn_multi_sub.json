@@ -1,0 +1,111 @@
+{
+    "result_types": {
+        "append": [
+            [
+                "power-med_analysis-pow_ssd_topographies"
+            ]
+        ]
+    },
+    "identical_keys": null,
+    "extract_from_dicts": {
+        "metadata": [
+            "sub",
+            "ses",
+            "med",
+            "stim",
+            "task",
+            "run"
+        ]
+    },
+    "discard_keys": [
+        "ssd_topographies_dimensions",
+        "processing_steps",
+        "sampling_frequency",
+        "subject_info"
+    ],
+    "steps": [
+        {
+            "method": "absolute",
+            "data_keys": [
+                "ssd_topographies"
+            ],
+            "eligible_entries": null
+        },
+        {
+            "method": "average_over_nodes",
+            "over_key": "run",
+            "data_keys": [
+                "ssd_topographies"
+            ],
+            "group_keys": [
+                "ch_names",
+                "transformed_ch_names",
+                "component_numbers",
+                "ch_regions",
+                "ch_reref_types",
+                "ch_hemispheres",
+                "band_names",
+                "sub",
+                "ses",
+                "med",
+                "stim",
+                "task"
+            ],
+            "eligible_entries": null,
+            "ignore_nan": false,
+            "var_measures": null,
+            "identical_keys": [
+                "ch_coords"
+            ]
+        },
+        {
+            "method": "average_over_nodes",
+            "over_key": "ses",
+            "data_keys": [
+                "ssd_topographies"
+            ],
+            "group_keys": [
+                "ch_names",
+                "transformed_ch_names",
+                "component_numbers",
+                "ch_regions",
+                "ch_reref_types",
+                "ch_hemispheres",
+                "band_names",
+                "sub",
+                "med",
+                "stim",
+                "task",
+                "run"
+            ],
+            "eligible_entries": null,
+            "ignore_nan": false,
+            "var_measures": null,
+            "identical_keys": [
+                "ch_coords"
+            ]
+        },
+        {
+            "method": "zscore_over_nodes",
+            "data_keys": [
+                "ssd_topographies"
+            ],
+            "group_keys": [
+                "transformed_ch_names",
+                "component_numbers",
+                "ch_regions",
+                "ch_reref_types",
+                "ch_hemispheres",
+                "band_names",
+                "sub",
+                "med",
+                "stim",
+                "task",
+                "run"
+            ],
+            "eligible_entries": null,
+            "ignore_nan": false,
+            "identical_keys": null
+        }
+    ]
+}

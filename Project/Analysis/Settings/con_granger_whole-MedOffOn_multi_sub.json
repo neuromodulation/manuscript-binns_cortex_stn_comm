@@ -1,0 +1,199 @@
+{
+    "result_types": {
+        "append": [
+            [
+                "connectivity-med_analysis-con_granger_whole"
+            ]
+        ]
+    },
+    "identical_keys": [
+        "windows",
+        "frequencies"
+    ],
+    "extract_from_dicts": {
+        "metadata": [
+            "sub",
+            "ses",
+            "med",
+            "stim",
+            "task",
+            "run"
+        ]
+    },
+    "discard_keys": [
+        "seed_names",
+        "target_names",
+        "seed_subregions",
+        "target_subregions",
+        "processing_steps",
+        "sampling_frequency",
+        "subject_info"
+    ],
+    "steps": [
+        {
+            "method": "average_within_nodes",
+            "data_keys": [
+                "connectivity-gc",
+                "connectivity-gc_ts",
+                "connectivity-net_gc",
+                "connectivity-gc_tr",
+                "connectivity-gc_tr_ts",
+                "connectivity-trgc"
+            ],
+            "average_dimension": "windows",
+            "eligible_entries": null,
+            "ignore_nan": false,
+            "var_measures": null
+        },
+        {
+            "method": "average_over_nodes",
+            "over_key": "run",
+            "data_keys": [
+                "connectivity-gc",
+                "connectivity-gc_ts",
+                "connectivity-net_gc",
+                "connectivity-gc_tr",
+                "connectivity-gc_tr_ts",
+                "connectivity-trgc",
+                "seed_coords",
+                "target_coords"
+            ],
+            "group_keys": [
+                "seed_types",
+                "seed_regions",
+                "seed_reref_types",
+                "seed_hemispheres",
+                "target_types",
+                "target_regions",
+                "target_reref_types",
+                "target_hemispheres",
+                "node_lateralisation",
+                "node_epoch_orders",
+                "sub",
+                "ses",
+                "med",
+                "stim",
+                "task"
+            ],
+            "eligible_entries": null,
+            "ignore_nan": false,
+            "var_measures": null,
+            "identical_keys": [
+                "connectivity-net_trgc_dimensions",
+                "frequencies"
+            ]
+        },
+        {
+            "method": "average_over_nodes",
+            "over_key": "ses",
+            "data_keys": [
+                "connectivity-gc",
+                "connectivity-gc_ts",
+                "connectivity-net_gc",
+                "connectivity-gc_tr",
+                "connectivity-gc_tr_ts",
+                "connectivity-trgc",
+                "seed_coords",
+                "target_coords"
+            ],
+            "group_keys": [
+                "seed_types",
+                "seed_regions",
+                "seed_reref_types",
+                "seed_hemispheres",
+                "target_types",
+                "target_regions",
+                "target_reref_types",
+                "target_hemispheres",
+                "node_lateralisation",
+                "node_epoch_orders",
+                "sub",
+                "med",
+                "stim",
+                "task",
+                "run"
+            ],
+            "eligible_entries": null,
+            "ignore_nan": false,
+            "var_measures": null,
+            "identical_keys": [
+                "connectivity-net_trgc_dimensions",
+                "frequencies"
+            ]
+        },
+        {
+            "method": "average_over_nodes",
+            "over_key": "seed_hemispheres",
+            "data_keys": [
+                "connectivity-gc",
+                "connectivity-gc_ts",
+                "connectivity-net_gc",
+                "connectivity-gc_tr",
+                "connectivity-gc_tr_ts",
+                "connectivity-trgc",
+                "seed_coords"
+            ],
+            "group_keys": [
+                "seed_types",
+                "seed_regions",
+                "seed_reref_types",
+                "target_types",
+                "target_regions",
+                "target_reref_types",
+                "target_hemispheres",
+                "node_lateralisation",
+                "node_epoch_orders",
+                "sub",
+                "med",
+                "stim",
+                "task",
+                "run"
+            ],
+            "eligible_entries": null,
+            "ignore_nan": false,
+            "var_measures": null,
+            "identical_keys": [
+                "connectivity-net_trgc_dimensions",
+                "target_coords",
+                "frequencies"
+            ]
+        },
+        {
+            "method": "average_over_nodes",
+            "over_key": "target_hemispheres",
+            "data_keys": [
+                "connectivity-gc",
+                "connectivity-gc_ts",
+                "connectivity-net_gc",
+                "connectivity-gc_tr",
+                "connectivity-gc_tr_ts",
+                "connectivity-trgc",
+                "target_coords"
+            ],
+            "group_keys": [
+                "seed_types",
+                "seed_regions",
+                "seed_reref_types",
+                "seed_hemispheres",
+                "target_types",
+                "target_regions",
+                "target_reref_types",
+                "node_lateralisation",
+                "node_epoch_orders",
+                "sub",
+                "med",
+                "stim",
+                "task",
+                "run"
+            ],
+            "eligible_entries": null,
+            "ignore_nan": false,
+            "var_measures": null,
+            "identical_keys": [
+                "connectivity-net_trgc_dimensions",
+                "seed_coords",
+                "frequencies"
+            ]
+        }
+    ]
+}

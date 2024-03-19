@@ -1,0 +1,26 @@
+name: manuscript-binns_cortex_stn_comm
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - mne=1.6
+  - mne-bids=0.13
+  - trimesh=3.23
+  - nibabel=5.1
+  - numpy=1.24
+  - numba=0.57
+  - pandas=2.0
+  - scipy=1.10
+  - statsmodels=0.14
+  - ipython
+  - ipykernel
+  - ipympl
+  - pip
+  - pip:
+    - pyparrm==1.1
+    - pqdm==0.2
+    - git+https://github.com/neuromodulation/mne-connectivity_tsbinns.git@1.0.1
+    - git+https://github.com/richardkoehler/pte.git@0.1.0
+    - git+https://github.com/richardkoehler/pte-stats.git@0.2.0
+    - git+https://github.com/neuromodulation/pte-decode_tsbinns.git@main
