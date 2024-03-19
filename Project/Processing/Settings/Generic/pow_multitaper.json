@@ -1,0 +1,22 @@
+{
+    "power_method": "multitaper",
+    "fmin": 3.0,
+    "fmax": 150.0,
+    "bandwidth": 5.0,
+    "adaptive": false,
+    "low_bias": true,
+    "normalization": "full",
+    "n_jobs": 10,
+    "average_windows": true,
+    "average_epochs": true,
+    "normalise": {
+        "norm_type": "percentage_total",
+        "within_dim": "channels",
+        "exclude_line_noise_window": 10,
+        "line_noise_freq": 50,
+        "freq_range": [
+            5,
+            60.5
+        ]
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "load_annotations": true,
+    "parrm": {
+        "grouping": [
+            "ch_regions",
+            "ch_hemispheres"
+        ],
+        "eligible_entries": {
+            "ch_types": [
+                "ecog",
+                "dbs"
+            ]
+        },
+        "n_jobs": 10
+    },
+    "rereference": null,
+    "reorder_channels": true,
+    "line_noise_Hz": 50,
+    "bandpass": [
+        {
+            "freqs": [
+                3,
+                150
+            ],
+            "picks": null
+        }
+    ],
+    "epoch": {
+        "length_s": 2,
+        "sd_outlier": 3
+    },
+    "resample_Hz": 500,
+    "bootstrap": {
+        "n_bootstraps": 200,
+        "n_epochs_per_bootstrap": 30,
+        "random_seed": 44
+    }
+}

@@ -1,0 +1,134 @@
+{
+    "result_types": {
+        "append": [
+            [
+                "power-med_analysis-pow_ssd"
+            ]
+        ]
+    },
+    "identical_keys": [
+        "frequencies",
+        "power-ssd_dimensions"
+    ],
+    "extract_from_dicts": {
+        "metadata": [
+            "sub",
+            "ses",
+            "med",
+            "stim",
+            "task",
+            "run"
+        ]
+    },
+    "discard_keys": [
+        "component_eigenvalues",
+        "component_eigenvalues_dimensions",
+        "component_spectral_ratios",
+        "component_spectral_ratios_dimensions",
+        "original_ch_names",
+        "processing_steps",
+        "sampling_frequency",
+        "subject_info"
+    ],
+    "steps": [
+        {
+            "method": "average_over_nodes",
+            "over_key": "run",
+            "data_keys": [
+                "power-ssd"
+            ],
+            "group_keys": [
+                "transformed_ch_names",
+                "transformed_ch_types",
+                "transformed_ch_regions",
+                "transformed_ch_subregions",
+                "transformed_ch_hemispheres",
+                "transformed_ch_reref_types",
+                "transformed_ch_epoch_orders",
+                "component_numbers",
+                "band_names",
+                "sub",
+                "ses",
+                "med",
+                "stim",
+                "task"
+            ],
+            "eligible_entries": null,
+            "ignore_nan": false,
+            "var_measures": null,
+            "identical_keys": [
+                "power-ssd_dimensions",
+                "transformed_ch_coords",
+                "frequencies"
+            ]
+        },
+        {
+            "method": "average_over_nodes",
+            "over_key": "ses",
+            "data_keys": [
+                "power-ssd",
+                "transformed_ch_coords"
+            ],
+            "group_keys": [
+                "transformed_ch_names",
+                "transformed_ch_types",
+                "transformed_ch_regions",
+                "transformed_ch_subregions",
+                "transformed_ch_hemispheres",
+                "transformed_ch_reref_types",
+                "transformed_ch_epoch_orders",
+                "component_numbers",
+                "band_names",
+                "sub",
+                "med",
+                "stim",
+                "task",
+                "run"
+            ],
+            "eligible_entries": null,
+            "ignore_nan": false,
+            "var_measures": null,
+            "identical_keys": [
+                "power-ssd_dimensions",
+                "transformed_ch_coords",
+                "frequencies"
+            ]
+        },
+        {
+            "method": "isolate_bands",
+            "data_keys": [
+                "power-ssd"
+            ],
+            "isolate_dimension": "frequencies",
+            "bands": {
+                "theta": [
+                    4,
+                    8
+                ],
+                "alpha": [
+                    8,
+                    12
+                ],
+                "low_beta": [
+                    12,
+                    20
+                ],
+                "high_beta": [
+                    20,
+                    30
+                ]
+            },
+            "eligible_entries": null
+        },
+        {
+            "method": "average_within_nodes",
+            "data_keys": [
+                "power-ssd"
+            ],
+            "average_dimension": "frequencies",
+            "eligible_entries": null,
+            "ignore_nan": false,
+            "var_measures": null
+        }
+    ]
+}

@@ -1,0 +1,134 @@
+{
+    "result_types": {
+        "append": [
+            [
+                "connectivity-med_analysis-con_tde_bipolar"
+            ]
+        ]
+    },
+    "identical_keys": [
+        "windows",
+        "timepoints"
+    ],
+    "extract_from_dicts": {
+        "metadata": [
+            "sub",
+            "ses",
+            "med",
+            "stim",
+            "task",
+            "run"
+        ]
+    },
+    "discard_keys": [
+        "target_subregions",
+        "processing_steps",
+        "sampling_frequency",
+        "subject_info"
+    ],
+    "steps": [
+        {
+            "method": "average_within_nodes",
+            "average_dimension": "windows",
+            "data_keys": [
+                "tde-i_standard_tau"
+            ],
+            "eligible_entries": null,
+            "ignore_nan": false,
+            "var_measures": [
+                "ci_80",
+                "ci_85",
+                "ci_90",
+                "ci_95",
+                "ci_99"
+            ]
+        },
+        {
+            "method": "zscore_within_nodes",
+            "data_keys": [
+                "tde-i_standard"
+            ],
+            "zscore_dimension": "timepoints",
+            "eligible_entries": null,
+            "ignore_nan": false
+        },
+        {
+            "method": "average_over_nodes",
+            "over_key": "run",
+            "data_keys": [
+                "tde-i_standard",
+                "tde-i_standard_tau",
+                "seed_coords",
+                "target_coords"
+            ],
+            "group_keys": [
+                "freq_band_names",
+                "freq_band_bounds",
+                "seed_names",
+                "seed_types",
+                "seed_regions",
+                "seed_subregions",
+                "seed_reref_types",
+                "seed_hemispheres",
+                "target_names",
+                "target_types",
+                "target_regions",
+                "target_reref_types",
+                "target_hemispheres",
+                "node_lateralisation",
+                "node_epoch_orders",
+                "sub",
+                "ses",
+                "med",
+                "stim",
+                "task"
+            ],
+            "eligible_entries": null,
+            "ignore_nan": false,
+            "var_measures": null,
+            "identical_keys": [
+                "tde-i_standard_dimensions",
+                "timepoints"
+            ]
+        },
+        {
+            "method": "average_over_nodes",
+            "over_key": "ses",
+            "data_keys": [
+                "tde-i_standard",
+                "tde-i_standard_tau",
+                "seed_coords",
+                "target_coords"
+            ],
+            "group_keys": [
+                "freq_band_names",
+                "freq_band_bounds",
+                "seed_names",
+                "seed_types",
+                "seed_regions",
+                "seed_subregions",
+                "seed_reref_types",
+                "seed_hemispheres",
+                "target_names",
+                "target_types",
+                "target_regions",
+                "target_reref_types",
+                "target_hemispheres",
+                "node_lateralisation",
+                "node_epoch_orders",
+                "sub",
+                "med",
+                "stim",
+                "task",
+                "run"
+            ],
+            "eligible_entries": null,
+            "ignore_nan": false,
+            "var_measures": null,
+            "identical_keys": [
+                "tde-i_standard_dimensions",
+                "timepoints"
+            ]
+        }
+    ]
+}

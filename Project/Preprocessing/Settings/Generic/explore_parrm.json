@@ -1,0 +1,17 @@
+{
+    "load_annotations": true,
+    "explore_parrm": {
+        "stim_freq": 130,
+        "grouping": [
+            "ch_regions",
+            "ch_hemispheres"
+        ],
+        "eligible_entries": {
+            "ch_types": [
+                "ecog",
+                "dbs"
+            ]
+        },
+        "n_jobs": 10
+    }
+}

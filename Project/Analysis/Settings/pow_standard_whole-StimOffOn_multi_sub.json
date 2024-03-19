@@ -1,0 +1,134 @@
+{
+    "result_types": {
+        "append": [
+            [
+                "power-stim_analysis-pow_multitaper_normalised"
+            ]
+        ]
+    },
+    "identical_keys": [
+        "freqs"
+    ],
+    "extract_from_dicts": {
+        "metadata": [
+            "sub",
+            "med",
+            "stim",
+            "ses",
+            "task",
+            "run"
+        ]
+    },
+    "discard_keys": [
+        "ch_names",
+        "processing_steps",
+        "samp_freq",
+        "subject_info"
+    ],
+    "steps": [
+        {
+            "method": "average_over_nodes",
+            "over_key": "ch_subregions",
+            "data_keys": [
+                "power-multitaper",
+                "ch_coords"
+            ],
+            "group_keys": [
+                "ch_types",
+                "ch_regions",
+                "ch_reref_types",
+                "ch_hemispheres",
+                "sub",
+                "ses",
+                "med",
+                "stim",
+                "task",
+                "run"
+            ],
+            "eligible_entries": null,
+            "ignore_nan": false,
+            "var_measures": null,
+            "identical_keys": [
+                "freqs"
+            ]
+        },
+        {
+            "method": "average_over_nodes",
+            "over_key": "run",
+            "data_keys": [
+                "power-multitaper",
+                "ch_coords"
+            ],
+            "group_keys": [
+                "ch_types",
+                "ch_regions",
+                "ch_subregions",
+                "ch_reref_types",
+                "ch_hemispheres",
+                "sub",
+                "ses",
+                "med",
+                "stim",
+                "task"
+            ],
+            "eligible_entries": null,
+            "ignore_nan": false,
+            "var_measures": null,
+            "identical_keys": [
+                "freqs"
+            ]
+        },
+        {
+            "method": "average_over_nodes",
+            "over_key": "ses",
+            "data_keys": [
+                "power-multitaper",
+                "ch_coords"
+            ],
+            "group_keys": [
+                "ch_types",
+                "ch_regions",
+                "ch_subregions",
+                "ch_reref_types",
+                "ch_hemispheres",
+                "sub",
+                "med",
+                "stim",
+                "task",
+                "run"
+            ],
+            "eligible_entries": null,
+            "ignore_nan": false,
+            "var_measures": null,
+            "identical_keys": [
+                "freqs"
+            ]
+        },
+        {
+            "method": "average_over_nodes",
+            "over_key": "ch_hemispheres",
+            "data_keys": [
+                "power-multitaper",
+                "ch_coords"
+            ],
+            "group_keys": [
+                "ch_types",
+                "ch_regions",
+                "ch_subregions",
+                "ch_reref_types",
+                "sub",
+                "ses",
+                "med",
+                "stim",
+                "task",
+                "run"
+            ],
+            "eligible_entries": null,
+            "ignore_nan": false,
+            "var_measures": null,
+            "identical_keys": [
+                "freqs"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,54 @@
+{
+    "con_methods": [
+        "imcoh"
+    ],
+    "power_method": "multitaper",
+    "fmin": 3.0,
+    "fmax": 100.0,
+    "fskip": 0,
+    "faverage": false,
+    "tmin": null,
+    "tmax": null,
+    "mt_bandwidth": 5.0,
+    "mt_adaptive": false,
+    "mt_low_bias": true,
+    "cwt_freq_range": [
+        3.0,
+        100.0
+    ],
+    "cwt_freq_resolution": 0.5,
+    "cwt_n_cycles": 7.0,
+    "average_windows": false,
+    "average_timepoints": false,
+    "absolute_connectivity": false,
+    "block_size": 1000,
+    "n_jobs": 10,
+    "seeds": {
+        "grouping": [
+            "ch_reref_types",
+            "ch_hemispheres",
+            "ch_epoch_orders",
+            "ch_subregions",
+            "ch_names"
+        ],
+        "eligible_entries": {
+            "ch_types": [
+                "ecog"
+            ]
+        }
+    },
+    "targets": {
+        "grouping": [
+            "ch_reref_types",
+            "ch_hemispheres",
+            "ch_epoch_orders",
+            "ch_subregions",
+            "ch_names"
+        ],
+        "eligible_entries": {
+            "ch_types": [
+                "dbs"
+            ]
+        }
+    }
+}

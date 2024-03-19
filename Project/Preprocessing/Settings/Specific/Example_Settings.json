@@ -1,0 +1,70 @@
+{
+    "cohort": "ECOG_LFP",
+    "sub": "01",
+    "med": "Off",
+    "stim": "Off",
+    "ses": "01",
+    "task": "Rest",
+    "run": "1",
+    "ch_names": [
+        "ECOG_01",
+        "ECOG_02",
+        "LFP_01",
+        "LFP_02"
+    ],
+    "ch_coords": null,
+    "ch_regions": [
+        "cortex",
+        "cortex",
+        "STN",
+        "STN"
+    ],
+    "ch_subregions": [
+        "sensory",
+        "motor",
+        "all",
+        "all"
+    ],
+    "ch_hemispheres": [
+        "R",
+        "R",
+        "R",
+        "R"
+    ],
+    "rereferencing": {
+        "bipolar": {
+            "ch_names_old": [
+                [
+                    "ECOG_01",
+                    "ECOG_02"
+                ],
+                [
+                    "LFP_01",
+                    "LFP_02"
+                ]
+            ],
+            "ch_names_new": [
+                "ECOG_(01-02)",
+                "LFP_(01-02)"
+            ],
+            "ch_types_new": null,
+            "ch_coords_new": null,
+            "ch_regions_new": null,
+            "ch_subregions_new": [
+                "sensorimotor",
+                null
+            ],
+            "ch_hemispheres_new": null,
+            "ch_reref_types": null
+        }
+    },
+    "post_reref_organisation": [
+        "ECOG_01",
+        "ECOG_02",
+        "ECOG_(01-02)",
+        "LFP_01",
+        "LFP_02",
+        "LFP_(01-02)"
+    ],
+    "shuffle_channels": null
+}

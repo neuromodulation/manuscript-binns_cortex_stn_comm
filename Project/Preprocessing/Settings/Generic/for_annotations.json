@@ -1,0 +1,16 @@
+{
+    "rereference": {
+        "bipolar": true,
+        "pseudo": true
+    },
+    "reorder_channels": true,
+    "bandpass": [
+        {
+            "freqs": [
+                3,
+                120
+            ],
+            "picks": null
+        }
+    ]
+}
