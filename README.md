@@ -1,6 +1,6 @@
 # manuscript-binns_cortex_stn_comm
 
-Code for the manuscript Binns *et al.* (Pre-print). DOI: TBC.
+Code for the manuscript Binns *et al.* (Pre-print). DOI: [10.1101/2024.04.14.586969](https://doi.org/10.1101/2024.04.14.586969).
 
 The repository has the following structure:
 - [processing](processing) - location of scripts for (pre)processing of data (view [README](processing/README.txt))
@@ -12,7 +12,9 @@ The repository has the following structure:
 \
 The scripts have several external dependencies:
 - for Python, these should be acquired using the [`environment.yml`](environment.yml) file with [conda](https://conda.io/projects/conda/en/latest/index.html), e.g.: 
-`conda env create --file=environment.yml --solver=libmamba`
+  ```
+  conda env create --file=environment.yml --solver=libmamba
+  ```
 - for MATLAB (R2022b), these must be acquired manually:
   - [SPM12 r7771](https://www.fil.ion.ucl.ac.uk/spm/software/spm12/)
   - [Lead-DBS v2.6](https://www.lead-dbs.org/)
