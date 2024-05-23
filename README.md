@@ -22,4 +22,4 @@ The scripts have several external dependencies:
 The scripts expect data to be in the [BIDS](https://bids.neuroimaging.io/) format.
 
 The data used in the study can be made available conditionally to data sharing agreements in accordance with data privacy statements signed by the patients within the legal framework of the General Data Protection Regulation of the European Union.\
-For this, you should contact the corresponding author ([julian.neumann@charite.de](mailto:julian.neumann@charite.de)) or the Open Data Officer ([opendata-neuromodulation@charite.de](mailto:opendata-neuromodulation@charite.de)).
+For this, you should contact the corresponding author: [julian.neumann@charite.de](mailto:julian.neumann@charite.de)
