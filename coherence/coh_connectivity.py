@@ -60,9 +60,7 @@ class ConnectivityCoherence(ProcBivariateConnectivity):
     -   Extracts and returns results.
     """
 
-    def __init__(
-        self, signal: coh_signal.Signal, verbose: bool = True
-    ) -> None:
+    def __init__(self, signal: coh_signal.Signal, verbose: bool = True) -> None:
         super().__init__(signal, verbose)
         super()._sort_inputs()
 
@@ -161,8 +159,8 @@ class ConnectivityCoherence(ProcBivariateConnectivity):
         -   Only used if 'mode' is 'multitaper'.
 
         mt_adaptive : bool; default False
-        -   Whether or not to use adaptive weights to comine the tapered spectra
-            into power spectra.
+        -   Whether or not to use adaptive weights to combine the tapered
+            spectra into power spectra.
         -   Only used if 'mode' is 'multitaper'.
 
         mt_low_bias : bool: default True
@@ -274,9 +272,7 @@ class ConnectivityTDE(ProcBivariateConnectivity):
     -   Extracts and returns results.
     """
 
-    def __init__(
-        self, signal: coh_signal.Signal, verbose: bool = True
-    ) -> None:
+    def __init__(self, signal: coh_signal.Signal, verbose: bool = True) -> None:
         super().__init__(signal, verbose)
         super()._sort_inputs()
 
@@ -690,9 +686,7 @@ class ConnectivityMultivariateCoh(ProcMultivariateConnectivity):
     -   Extracts and returns results.
     """
 
-    def __init__(
-        self, signal: coh_signal.Signal, verbose: bool = True
-    ) -> None:
+    def __init__(self, signal: coh_signal.Signal, verbose: bool = True) -> None:
         super().__init__(signal, verbose)
         super()._sort_inputs()
 
@@ -790,8 +784,8 @@ class ConnectivityMultivariateCoh(ProcMultivariateConnectivity):
         -   Only used if 'mode' is 'multitaper'.
 
         mt_adaptive : bool; default False
-        -   Whether or not to use adaptive weights to comine the tapered spectra
-            into power spectra.
+        -   Whether or not to use adaptive weights to combine the tapered
+            spectra into power spectra.
         -   Only used if 'mode' is 'multitaper'.
 
         mt_low_bias : bool: default True
@@ -1153,9 +1147,7 @@ class ConnectivityGranger(ProcMultivariateConnectivity):
     -   Extracts and returns results.
     """
 
-    def __init__(
-        self, signal: coh_signal.Signal, verbose: bool = True
-    ) -> None:
+    def __init__(self, signal: coh_signal.Signal, verbose: bool = True) -> None:
         super().__init__(signal, verbose)
         super()._sort_inputs()
 
@@ -1241,7 +1233,7 @@ class ConnectivityGranger(ProcMultivariateConnectivity):
         -   Whether or not to make sure that the data being processed has full
             rank by performing a singular value decomposition on the data of the
             seeds and targets and taking only the first n components, where n is
-            equal to number of non-zero singluar values in the decomposition
+            equal to number of non-zero singular values in the decomposition
             (i.e. the rank of the data).
         -   If this is not performed, errors can arise when computing Granger
             causality as assumptions of the method are violated.
@@ -1276,8 +1268,8 @@ class ConnectivityGranger(ProcMultivariateConnectivity):
         -   Only used if 'cs_method' is "multitaper".
 
         mt_adaptive : bool; default False
-        -   Whether or not to use adaptive weights to comine the tapered spectra
-            into power spectra.
+        -   Whether or not to use adaptive weights to combine the tapered
+            spectra into power spectra.
         -   Only used if 'cs_method' is "multitaper".
 
         mt_low_bias : bool: default True

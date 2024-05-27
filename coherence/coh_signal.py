@@ -6,7 +6,6 @@ Signal
 -   Class for loading, preprocessing, and epoching an mne.io.Raw object.
 """
 
-
 from copy import deepcopy
 from typing import Any, Optional, Union
 from numpy.typing import NDArray
@@ -116,7 +115,7 @@ class Signal:
     rereference_pseudo
     -   Pseudo rereferences channels in the mne.io.Raw object.
     -   This allows e.g. rereferencing types, channel coordinates, etc... to be
-        assigned to the channels without any rereferencing occuring.
+        assigned to the channels without any rereferencing occurring.
     -   This is useful if e.g. the channels were already hardware rereferenced.
 
     epoch
@@ -165,9 +164,7 @@ class Signal:
         self._bootstrapped = False
         self._shuffled = False
 
-    def _update_processing_steps(
-        self, step_name: str, step_value: Any
-    ) -> None:
+    def _update_processing_steps(self, step_name: str, step_value: Any) -> None:
         """Updates the 'preprocessing' entry of the 'processing_steps'
         dictionary of the Signal object with new information consisting of a
         key:value pair in which the key is numbered based on the applied steps.
@@ -287,7 +284,7 @@ class Signal:
             'ch_coords'.
 
         ch_coords : list[empty list | list[int | float]]
-        -   Coordinates of the channels, with each entry consiting of a sublist
+        -   Coordinates of the channels, with each entry consisting of a sublist
             containing the x, y, and z coordinates of the corresponding channel
             specified in 'ch_names', or being empty.
 
@@ -322,7 +319,7 @@ class Signal:
             'ch_coords'.
 
         ch_coords : list[empty list | list[int | float]]
-        -   Coordinates of the channels, with each entry consiting of a sublist
+        -   Coordinates of the channels, with each entry consisting of a sublist
             containing the x, y, and z coordinates of the corresponding channel
             specified in 'ch_names'.
         """
@@ -692,7 +689,7 @@ class Signal:
     ) -> tuple[mne.annotations.Annotations, mne.annotations.Annotations]:
         """Removes segments annotated as 'bad' from the Annotations object.
 
-        Paramaters
+        Parameters
         ----------
         labels : list of str | None (default None)
             Labels of the bad segments to remove.
@@ -727,7 +724,7 @@ class Signal:
     def remove_bad_segments(self, labels: list[str] | None = None) -> None:
         """Removes segments annotated as 'bad' from the Raw object.
 
-        Paramaters
+        Parameters
         ----------
         labels : list of str | None (default None)
             Labels of the bad segments to remove.
@@ -742,9 +739,7 @@ class Signal:
         if not isinstance(labels, list) and labels is not None:
             raise TypeError("`labels` must be a list of str or None.")
 
-        bad_annotations, good_annotations = self._remove_bad_annotations(
-            labels
-        )
+        bad_annotations, good_annotations = self._remove_bad_annotations(labels)
         self.data[0].set_annotations(bad_annotations)
         new_data = self.data[0].get_data(reject_by_annotation="omit")
         self.data[0] = mne.io.RawArray(data=new_data, info=self.data[0].info)
@@ -787,7 +782,7 @@ class Signal:
             it has been windowed.
         -   Raised if the user attempts to load annotations into the data after
             it has been epoched.
-        -   Annotations should be loaded before epoching has occured, when the
+        -   Annotations should be loaded before epoching has occurred, when the
             data is in the form of an mne.io.Raw object rather than an
             mne.Epochs object.
 
@@ -959,9 +954,7 @@ class Signal:
                 ]
             else:
                 ch_picks = picks
-        picked_types = np.unique(
-            self.data[0].get_channel_types(picks=ch_picks)
-        )
+        picked_types = np.unique(self.data[0].get_channel_types(picks=ch_picks))
 
         for data in self.data:
             data.filter(highpass_freq, lowpass_freq, picks=ch_picks)
@@ -1794,7 +1787,7 @@ class Signal:
             channel names in 'ch_names_old'.
 
         ch_types_new : list[str | None] | None; default None
-        -   The types of the new, comined channels.
+        -   The types of the new, combined channels.
         -   If an entry is None, the type is determined based on the types of
             the channels being combined. This only works if all channels being
             combined are of the same type.
@@ -2048,7 +2041,7 @@ class Signal:
     def _add_rereferencing_info(self, info_to_add: dict) -> None:
         """Adds channel rereferencing information to 'extra_info'.
 
-        PARAETERS
+        PARAMETERS
         ---------
         info_to_add : dict
         -   A dictionary used for updating 'extra_info'.
@@ -2086,8 +2079,7 @@ class Signal:
             that was produced.
         """
         return [
-            [ch_names_old[i], ch_names_new[i]]
-            for i in range(len(ch_names_old))
+            [ch_names_old[i], ch_names_new[i]] for i in range(len(ch_names_old))
         ]
 
     def _rereference(
@@ -2422,7 +2414,7 @@ class Signal:
     ) -> None:
         """Pseudo rereferences channels in the mne.io.Raw object.
         -   This allows e.g. rereferencing types, channel coordinates, etc... to
-            be assigned to the channels without any rereferencing occuring.
+            be assigned to the channels without any rereferencing occurring.
         -   This is useful if e.g. the channels were already hardware
             rereferenced.
 
@@ -2957,10 +2949,7 @@ class Signal:
                     )
                 )
                 shuffled_data[window_i][shuffle_i].rename_channels(
-                    {
-                        name: f"SHUFFLED[{shuffle_i}]_{name}"
-                        for name in channels
-                    }
+                    {name: f"SHUFFLED[{shuffle_i}]_{name}" for name in channels}
                 )
             if n_shuffles > 1:
                 shuffled_data[window_i] = shuffled_data[window_i][
@@ -3032,7 +3021,7 @@ class Signal:
         RETURNS
         -------
         extracted_data : numpy array
-        -   The time-series signals extracted from the mne.io.Raw oject.
+        -   The time-series signals extracted from the mne.io.Raw object.
         """
         extracted_data = []
         for data in self.data:

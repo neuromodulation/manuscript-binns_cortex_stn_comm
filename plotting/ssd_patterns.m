@@ -1,4 +1,4 @@
-%% Create intepolated SSD patterns and plot raw points (Figures 2B & S1)
+%% Create interpolated SSD patterns and plot raw points (Figures 2B & S1)
 
 repo_path = 'Path_to\Manuscript_repository';
 addpath('Path_to\wjn_toolbox_tsbinns');

@@ -236,8 +236,8 @@ def generate_fpath_from_analysed(
     -   Name of the analysis that will be included in the filename.
 
     ftype : str
-    -   Filetype extenstion of the file, with the period, e.g. a JSON file
-        would have an ftype of '.json'.
+    -   Filetype extension of the file, with the period, e.g. a JSON file would
+        have an ftype of '.json'.
 
     fpath_format : str; default "personal"
     -   The format the produced filepath should take.

@@ -1,0 +1,50 @@
+[
+    {
+        "cohort": "demo",
+        "sub": "a",
+        "ses": "off",
+        "task": "rest",
+        "acq": "demo",
+        "run": "1"
+    },
+    {
+        "cohort": "demo",
+        "sub": "a",
+        "ses": "on",
+        "task": "rest",
+        "acq": "demo",
+        "run": "1"
+    },
+    {
+        "cohort": "demo",
+        "sub": "b",
+        "ses": "off",
+        "task": "rest",
+        "acq": "demo",
+        "run": "1"
+    },
+    {
+        "cohort": "demo",
+        "sub": "b",
+        "ses": "on",
+        "task": "rest",
+        "acq": "demo",
+        "run": "1"
+    },
+    {
+        "cohort": "demo",
+        "sub": "c",
+        "ses": "off",
+        "task": "rest",
+        "acq": "demo",
+        "run": "1"
+    },
+    {
+        "cohort": "demo",
+        "sub": "c",
+        "ses": "on",
+        "task": "rest",
+        "acq": "demo",
+        "run": "1"
+    }
+]

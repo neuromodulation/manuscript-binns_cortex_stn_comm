@@ -38,7 +38,7 @@ ordered_list_from_dict
 -   Creates a list from entries in a dictionary, sorted based on a given order.
 
 ordered_dict_from_list
--   Creates a dictionary with keys occuring in a given order.
+-   Creates a dictionary with keys occurring in a given order.
 
 ragged_array_to_list
 -   Converts a ragged numpy array of nested arrays to a ragged list of nested
@@ -332,7 +332,7 @@ def unique(values: list) -> list:
     entries occur in the the original list.
     -   Similar to calling numpy's 'unique' with 'return_index' set to 'True'
         and then reordering the result of numpy's 'unique' to restore the order
-        in which the unique values occured in the original list.
+        in which the unique values occurred in the original list.
 
     PARAMETERS
     ----------
@@ -805,7 +805,7 @@ def combine_vals_list(
 
 
 def separate_vals_string(obj: str, separate_at: str) -> list[str]:
-    """Splits a string into substrings based on the occurence of characters
+    """Splits a string into substrings based on the occurrence of characters
     within the string, printing a warning if no separation takes place.
 
     PARAMETERS
@@ -837,7 +837,7 @@ def separate_vals_string(obj: str, separate_at: str) -> list[str]:
     if len(separated_vals) == 1:
         print(
             "Warning: The string was not split into multiple substrings, as no "
-            f"occurence of '{separate_at}' within the input string was found."
+            f"occurrence of '{separate_at}' within the input string was found."
         )
 
     return separated_vals
@@ -1376,9 +1376,7 @@ def _check_dimensions_results(
                     f"channel/node (in which case no {signal_dim}) axis should "
                     "be present in the dimensions)."
                 )
-        identical_dimensions, _ = check_vals_identical_list(
-            to_check=dimensions
-        )
+        identical_dimensions, _ = check_vals_identical_list(to_check=dimensions)
         if identical_dimensions:
             dimensions = [signal_dim, *dimensions[0]]
         else:
@@ -1399,15 +1397,13 @@ def _check_dimensions_results(
     return dimensions, dims_to_find
 
 
-def _sort_dimensions_results(
-    results: dict, verbose: bool
-) -> tuple[dict, list]:
+def _sort_dimensions_results(results: dict, verbose: bool) -> tuple[dict, list]:
     """Rearranges the dimensions of attributes in a results dictionary so that
     the 0th axis corresponds to results from different channels/nodes, and the
     1st dimension to different frequencies. If no dimensions, are given, the 0th
     axis is assumed to correspond to channels/nodes and the 1st axis to
     frequencies.
-    -   Dimensions for an attribute, say 'X', would be containined in an
+    -   Dimensions for an attribute, say 'X', would be contained in an
         attribute of the results dictionary under the name 'X_dimensions'.
     -   The dimensions should be provided as a list of strings containing the
         values "channels" or "nodes" and "frequencies" in the positions whose
@@ -1525,7 +1521,7 @@ def _check_entry_lengths_results(
     RETURNS
     -------
     length : int
-    -   The lenghts of the 0th axis of lists and numpy arrays in 'results'.
+    -   The lengths of the 0th axis of lists and numpy arrays in 'results'.
 
     RAISES
     ------
@@ -1601,9 +1597,7 @@ def _sort_identical_entries_results(
     -   The results dictionary with identical entries sorted.
     """
     for entry in identical_entries:
-        results[entry] = [
-            deepcopy(results[entry]) for _ in range(entry_length)
-        ]
+        results[entry] = [deepcopy(results[entry]) for _ in range(entry_length)]
 
     if verbose:
         print(

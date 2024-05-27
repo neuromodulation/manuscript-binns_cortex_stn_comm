@@ -232,8 +232,8 @@ def create_mne_data_info(
 
 
 def nested_changes_list(contents: list, changes: dict) -> None:
-    """Makes changes to the specified values occuring within nested dictionaries
-    of lists of a parent list.
+    """Makes changes to the specified values occurring within nested
+    dictionaries of lists of a parent list.
 
     PARAMETERS
     ----------
@@ -258,7 +258,7 @@ def nested_changes_list(contents: list, changes: dict) -> None:
 
 
 def nested_changes_dict(contents: dict, changes: dict) -> None:
-    """Makes changes to the specified values occuring within nested
+    """Makes changes to the specified values occurring within nested
     dictionaries or lists of a parent dictionary.
 
     PARAMETERS
@@ -284,7 +284,7 @@ def nested_changes_dict(contents: dict, changes: dict) -> None:
 
 
 def nested_changes(contents: Union[dict, list], changes: dict) -> None:
-    """Makes changes to the specified values occuring within nested
+    """Makes changes to the specified values occurring within nested
     dictionaries or lists of a parent dictionary or list.
 
     PARAMETERS

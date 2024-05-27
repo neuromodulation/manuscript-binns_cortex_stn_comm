@@ -20,7 +20,7 @@ EntryLengthError : Exception
 
 DuplicateEntryError : Exception
 -   Class for raising exceptions/errors associated with duplicate entries
-    occuring within an object.
+    occurring within an object.
 
 MissingEntryError : Exception
 -   Class for raising exceptions/errors associated with missing entries between
@@ -74,7 +74,7 @@ class EntryLengthError(Exception):
 
 class DuplicateEntryError(Exception):
     """Class for raising exceptions/errors associated with duplicate entries
-    occuring within an object.
+    occurring within an object.
     """
 
 

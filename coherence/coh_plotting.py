@@ -258,7 +258,7 @@ class Plotting(ABC):
         RETURNS
         -------
         list[str]
-        -   Names of keys in the reuslts not accounted for by the plotting
+        -   Names of keys in the results not accounted for by the plotting
             settings.
         """
         return [
@@ -366,7 +366,7 @@ class Plotting(ABC):
             )
             if not all_present:
                 raise ValueError(
-                    "Error when tyring to plot results:\nThe entry(ies) in the "
+                    "Error when trying to plot results:\nThe entry(ies) in the "
                     f"results {self.y_axis_limits_grouping} for creating "
                     "groups that will share the y-axis limits must also be "
                     "accounted for in the entry(ies) for creating groups that "
@@ -543,7 +543,7 @@ class Plotting(ABC):
                 if len(self.y_axis_labels) != len(self.y_axis_vars):
                     raise EntryLengthError(
                         "Error when trying to plot results:\nThe number of "
-                        "different variables being plotted seperately on the "
+                        "different variables being plotted separately on the "
                         f"y-axes ({len(self.y_axis_vars)}) and the number of "
                         f"y-axis labels ({len(self.y_axis_labels)}) do not "
                         "match."
@@ -551,7 +551,7 @@ class Plotting(ABC):
             else:
                 if len(self.y_axis_labels) != 1:
                     raise EntryLengthError(
-                        "Error when tyring to plot results:\nThe different "
+                        "Error when trying to plot results:\nThe different "
                         "variables are being plotted together on the y-axes, "
                         "and so there can only be a single y-axis label, but "
                         f"there are {len(self.y_axis_labels)} labels."
@@ -582,7 +582,7 @@ class Plotting(ABC):
                 if len(self.y_axis_scales) != len(self.y_axis_vars):
                     raise EntryLengthError(
                         "Error when trying to plot results:\nThe number of "
-                        "different variables being plotted seperately on the "
+                        "different variables being plotted separately on the "
                         f"y-axes ({len(self.y_axis_vars)}) and the number of "
                         f"y-axis scales ({len(self.y_axis_labels)}) do not "
                         "match."
@@ -590,7 +590,7 @@ class Plotting(ABC):
             else:
                 if len(self.y_axis_scales) != 1:
                     raise EntryLengthError(
-                        "Error when tyring to plot results:\nThe different "
+                        "Error when trying to plot results:\nThe different "
                         "variables are being plotted together on the y-axes, "
                         "and so there can only be a single y-axis scale, but "
                         f"there are {len(self.y_axis_labels)} scales."
@@ -1700,9 +1700,7 @@ class LinePlot(Plotting):
 
         return label
 
-    def _get_vals_to_plot(
-        self, y_var: str, idx: int
-    ) -> tuple[
+    def _get_vals_to_plot(self, y_var: str, idx: int) -> tuple[
         list[Union[int, float]],
         list[Union[int, float]],
         list[list[Union[int, float]]],
@@ -2211,15 +2209,15 @@ class BoxPlot(Plotting):
                     subplot_subgroup,
                     subgroup_idcs,
                 ) in subplot_groups[subplot_group].items():
-                    subplot_groups[subplot_group][
-                        subplot_subgroup
-                    ] = get_group_names_idcs(
-                        dataframe=self._results,
-                        keys=self.analysis_keys,
-                        eligible_idcs=subgroup_idcs,
-                        replacement_idcs=subgroup_idcs,
-                        special_vals=self._special_values,
-                        keys_in_names=True,
+                    subplot_groups[subplot_group][subplot_subgroup] = (
+                        get_group_names_idcs(
+                            dataframe=self._results,
+                            keys=self.analysis_keys,
+                            eligible_idcs=subgroup_idcs,
+                            replacement_idcs=subgroup_idcs,
+                            special_vals=self._special_values,
+                            keys_in_names=True,
+                        )
                     )
 
     def _plot_subplot(

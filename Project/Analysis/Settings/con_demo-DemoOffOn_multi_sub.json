@@ -1,0 +1,170 @@
+{
+    "result_types": {
+        "append": [
+            [
+                "connectivity-demo_analysis-con_demo"
+            ]
+        ]
+    },
+    "identical_keys": [
+        "frequencies"
+    ],
+    "extract_from_dicts": {
+        "metadata": [
+            "sub",
+            "ses",
+            "med",
+            "stim",
+            "task",
+            "run"
+        ]
+    },
+    "discard_keys": [
+        "seed_names",
+        "target_names",
+        "seed_subregions",
+        "target_subregions",
+        "processing_steps",
+        "sampling_frequency",
+        "subject_info"
+    ],
+    "steps": [
+        {
+            "method": "absolute",
+            "data_keys": [
+                "connectivity-imcoh"
+            ],
+            "eligible_entries": null
+        },
+        {
+            "method": "average_over_nodes",
+            "over_key": "run",
+            "data_keys": [
+                "connectivity-imcoh",
+                "seed_coords",
+                "target_coords"
+            ],
+            "group_keys": [
+                "seed_types",
+                "seed_regions",
+                "seed_reref_types",
+                "seed_hemispheres",
+                "target_types",
+                "target_regions",
+                "target_reref_types",
+                "target_hemispheres",
+                "node_lateralisation",
+                "node_epoch_orders",
+                "sub",
+                "ses",
+                "med",
+                "stim",
+                "task"
+            ],
+            "eligible_entries": null,
+            "ignore_nan": false,
+            "var_measures": null,
+            "identical_keys": [
+                "connectivity-imcoh_dimensions",
+                "frequencies"
+            ]
+        },
+        {
+            "method": "average_over_nodes",
+            "over_key": "ses",
+            "data_keys": [
+                "connectivity-imcoh",
+                "seed_coords",
+                "target_coords"
+            ],
+            "group_keys": [
+                "seed_types",
+                "seed_regions",
+                "seed_reref_types",
+                "seed_hemispheres",
+                "target_types",
+                "target_regions",
+                "target_reref_types",
+                "target_hemispheres",
+                "node_lateralisation",
+                "node_epoch_orders",
+                "sub",
+                "med",
+                "stim",
+                "task",
+                "run"
+            ],
+            "eligible_entries": null,
+            "ignore_nan": false,
+            "var_measures": null,
+            "identical_keys": [
+                "connectivity-imcoh_dimensions",
+                "frequencies"
+            ]
+        },
+        {
+            "method": "average_over_nodes",
+            "over_key": "seed_hemispheres",
+            "data_keys": [
+                "connectivity-imcoh",
+                "seed_coords"
+            ],
+            "group_keys": [
+                "seed_types",
+                "seed_regions",
+                "seed_reref_types",
+                "target_types",
+                "target_regions",
+                "target_reref_types",
+                "target_hemispheres",
+                "node_lateralisation",
+                "node_epoch_orders",
+                "sub",
+                "med",
+                "stim",
+                "task",
+                "run"
+            ],
+            "eligible_entries": null,
+            "ignore_nan": false,
+            "var_measures": null,
+            "identical_keys": [
+                "connectivity-imcoh_dimensions",
+                "target_coords",
+                "frequencies"
+            ]
+        },
+        {
+            "method": "average_over_nodes",
+            "over_key": "target_hemispheres",
+            "data_keys": [
+                "connectivity-imcoh",
+                "target_coords"
+            ],
+            "group_keys": [
+                "seed_types",
+                "seed_regions",
+                "seed_reref_types",
+                "seed_hemispheres",
+                "target_types",
+                "target_regions",
+                "target_reref_types",
+                "node_lateralisation",
+                "node_epoch_orders",
+                "sub",
+                "med",
+                "stim",
+                "task",
+                "run"
+            ],
+            "eligible_entries": null,
+            "ignore_nan": false,
+            "var_measures": null,
+            "identical_keys": [
+                "connectivity-imcoh_dimensions",
+                "seed_coords",
+                "frequencies"
+            ]
+        }
+    ]
+}

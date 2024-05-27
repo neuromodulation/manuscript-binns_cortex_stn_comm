@@ -52,7 +52,7 @@ def find_exclusion_indices(
         normalise the data by.
     -   If 0, no frequencies are excluded.
     -   E.g. if the line noise is 50 Hz and 'exclusion_line_noise_window' is 10,
-        the results from 45 - 55 Hz would be ommited.
+        the results from 45 - 55 Hz would be omitted.
 
     freq_range : list of int or float
         Frequency range (in Hz) to use for computing the normalisation,
@@ -128,7 +128,7 @@ def find_inclusion_indices(
         normalise the data by.
     -   If 0, no frequencies are excluded.
     -   E.g. if the line noise is 50 Hz and 'exclusion_line_noise_window' is 10,
-        the results from 45 - 55 Hz would be ommited.
+        the results from 45 - 55 Hz would be omitted.
 
     freq_range : list of int or float | None; default None
         Frequency range (in Hz) to use for computing the normalisation,
@@ -233,9 +233,7 @@ def restore_data_dims(
             f"desired data dimensions ({lengths[2]}) must match."
         )
 
-    return np.transpose(
-        data, [current_dims.index(dim) for dim in restore_dims]
-    )
+    return np.transpose(data, [current_dims.index(dim) for dim in restore_dims])
 
 
 def norm_percentage_total(
@@ -276,7 +274,7 @@ def norm_percentage_total(
         normalise the data by.
     -   If 0, no frequencies are excluded.
     -   E.g. if the line noise is 50 Hz and 'exclusion_line_noise_window' is 10,
-        the results from 45 - 55 Hz would be ommited.
+        the results from 45 - 55 Hz would be omitted.
 
     freq_range : list of int or float | None; default None
         Frequency range (in Hz) to use for computing the normalisation,
@@ -309,9 +307,7 @@ def norm_percentage_total(
     )
 
 
-def gaussian_transform(
-    data: np.ndarray, axis: int | None = None
-) -> np.ndarray:
+def gaussian_transform(data: np.ndarray, axis: int | None = None) -> np.ndarray:
     """Gaussianises data to have mean = 0 and standard deviation = 1.
 
     PARAMETERS

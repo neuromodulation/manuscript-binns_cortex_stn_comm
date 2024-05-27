@@ -541,7 +541,7 @@ class PowerSSD(ProcMethod):
         -   The PSD of the SSD-transformed data.
 
         freqs : numpy ndarray
-        -   The frequencies correspoding to `psd`.
+        -   The frequencies corresponding to `psd`.
 
         signal_freqs: list[int]
         -   The lower and upper bound, respectively, of the signal frequencies.
@@ -715,9 +715,7 @@ class PowerSSD(ProcMethod):
                             group_i
                         ][band_i][key][0]
 
-    def power_as_array(
-        self, dimensions: list[str] | None = None
-    ) -> np.ndarray:
+    def power_as_array(self, dimensions: list[str] | None = None) -> np.ndarray:
         """Extracts and returns power of transformed data as an array.
 
         PARAMETERS
@@ -1104,9 +1102,7 @@ class PowerSSD(ProcMethod):
                     values = method(
                         [
                             var
-                            for var in self._results[group_i][band_i][
-                                copy_from
-                            ]
+                            for var in self._results[group_i][band_i][copy_from]
                         ],
                         n_chs,
                     ).tolist()
@@ -1173,17 +1169,13 @@ class PowerSSD(ProcMethod):
                 n_comps = self._results[group_i][band_i]["n_comps"]
 
                 if copy_from is not None and not isinstance(copy_from, str):
-                    values = method(
-                        copy_from[band_i], n_comps * n_chs
-                    ).tolist()
+                    values = method(copy_from[band_i], n_comps * n_chs).tolist()
 
                 elif isinstance(copy_from, str):
                     values = method(
                         [
                             var
-                            for var in self._results[group_i][band_i][
-                                copy_from
-                            ]
+                            for var in self._results[group_i][band_i][copy_from]
                         ],
                         n_chs,
                     ).tolist()

@@ -30,7 +30,7 @@ def coherence_processing(
     verbose: bool,
     save: bool,
 ) -> None:
-    """Peforms processing to generate coherence results.
+    """Performs processing to generate coherence results.
 
     PARAMETERS
     ----------
@@ -237,8 +237,8 @@ def mim_mic_processing(
     verbose: bool,
     save: bool,
 ) -> None:
-    """Peforms processing to generate multivariate conectivity results for the
-    multivariate interaction measure (MIM) and/or the maximised imaginary
+    """Performs processing to generate multivariate connectivity results for
+    the multivariate interaction measure (MIM) and/or the maximised imaginary
     coherence (MIC).
 
     PARAMETERS
@@ -336,7 +336,9 @@ def mim_mic_processing(
             f"connectivity-{preprocessing}-{analysis}",
             "",
         )
-        multivariate.save_results(multivariate_fpath, "pkl", ask_before_overwrite=False)
+        multivariate.save_results(
+            multivariate_fpath, "pkl", ask_before_overwrite=False
+        )
 
 
 def granger_processing(
@@ -353,7 +355,7 @@ def granger_processing(
     verbose: bool,
     save: bool,
 ) -> None:
-    """Peforms processing to generate multivariate spectral Granger causality
+    """Performs processing to generate multivariate spectral Granger causality
     results.
 
     PARAMETERS

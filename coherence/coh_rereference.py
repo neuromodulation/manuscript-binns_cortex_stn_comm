@@ -513,9 +513,7 @@ class RerefBipolar(Reref):
                         name for name in self._ch_names_old[i]
                     )
 
-    def _sort_feature(
-        self, feature: str, replacement: list[list[Any]]
-    ) -> None:
+    def _sort_feature(self, feature: str, replacement: list[list[Any]]) -> None:
         """Resolves any missing entries from the channel features of the new
         channels.
 
@@ -901,7 +899,7 @@ class RerefPseudo(Reref):
     """Pseudo rereferences data in an MNE Raw object.
     -   This allows e.g. rereferencing types to be assigned to the channels,
         channel coordinates to be set, etc... without any rereferencing
-        occuring.
+        occurring.
     -   This is useful if e.g. the channels were already hardware rereferenced.
 
     PARAMETERS
@@ -1030,8 +1028,7 @@ class RerefPseudo(Reref):
         rereferenced channel equal to that of the corresponding channel in the
         original data."""
         self._new_data = [
-            self._data[self._ch_index[ch_i]]
-            for ch_i in range(self._n_channels)
+            self._data[self._ch_index[ch_i]] for ch_i in range(self._n_channels)
         ]
 
     def _set_coordinates(self) -> None:

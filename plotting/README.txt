@@ -6,11 +6,11 @@ The different files are:
 - "imcoh": plot ImCoh (Figure 3A & 3B)
 - "mic_patterns_hyperdirect_fibres": plot hyperdirect fibres coloured according
   to MIC patterns (Figure 4A)
-- "mic_patterns": create intepolated MIC patterns and plot raw points (Figures
+- "mic_patterns": create interpolated MIC patterns and plot raw points (Figures
   3A, S3)
 - "power": plot power (univariate and multivariate; Figure 2)
 - "ssd_patterns_dbs_contacts": plot SSD patterns for DBS contacts (Figure 2C)
-- "ssd_patterns": create intepolated SSD patterns and plot raw points (Figures
+- "ssd_patterns": create interpolated SSD patterns and plot raw points (Figures
   2B & S1)
 - "tde": plot time delay estimates (Figure 3D)
 - "trgc": plot TRGC (Figures 3C & S4)

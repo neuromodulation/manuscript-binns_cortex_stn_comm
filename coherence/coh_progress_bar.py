@@ -60,7 +60,7 @@ class ProgressBar:
         supported_handles = ["warning", "error"]
         if self.handle_n_exceeded not in supported_handles:
             raise NotImplementedError(
-                "Error: The method for hanlding instances of the total number "
+                "Error: The method for handling instances of the total number "
                 f"of steps being exceeded '{self.handle_n_exceeded}' is not "
                 f"supported. Supported inputs are {supported_handles}."
             )

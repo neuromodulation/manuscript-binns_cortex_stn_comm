@@ -1,0 +1,6 @@
+{
+    "epoch": {
+        "length_s": 2,
+        "sd_outlier": 3
+    }
+}

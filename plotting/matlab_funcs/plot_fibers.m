@@ -8,7 +8,7 @@ if ~exist('lw','var')
     lw = .1;
 end
 
-% reps is a repitition of each index - allows you to colour fibers
+% reps is a repetition of each index - allows you to colour fibers
 % according to their density for example in group analyses
 
 if exist('reps','var')

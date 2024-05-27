@@ -154,7 +154,7 @@ class ProcMethod(ABC):
     def _get_optimal_dims(self) -> list[str]:
         """Finds the optimal order of dimensions for the results, following the
         order ["windows", "channels", "epochs", "frequencies", "timepoints"]
-        based on which dimensions are present in the reuslts.
+        based on which dimensions are present in the results.
 
         RETURNS
         -------

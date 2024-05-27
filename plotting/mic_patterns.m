@@ -1,4 +1,4 @@
-%% Create intepolated MIC patterns and plot raw points (Figures 3A, S3)
+%% Create interpolated MIC patterns and plot raw points (Figures 3A, S3)
 
 repo_path = 'Path_to\Manuscript_repository';
 addpath('Path_to\wjn_toolbox_tsbinns');

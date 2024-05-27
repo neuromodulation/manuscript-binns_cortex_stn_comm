@@ -56,9 +56,7 @@ class PowerStandard(ProcMethod):
     -   Returns the power results and additional information as a dictionary.
     """
 
-    def __init__(
-        self, signal: coh_signal.Signal, verbose: bool = True
-    ) -> None:
+    def __init__(self, signal: coh_signal.Signal, verbose: bool = True) -> None:
         super().__init__(signal=signal, verbose=verbose)
 
         # Initialises inputs of the PowerMorlet object.
@@ -849,7 +847,7 @@ class PowerStandard(ProcMethod):
             normalise the data by.
         -   If None, no frequencies are excluded.
         -   E.g. if the line noise is 50 Hz and 'exclusion_line_noise_window' is
-            10, the results from 45 - 55 Hz would be ommited.
+            10, the results from 45 - 55 Hz would be omitted.
 
         line_noise_freq : int | float | None; default None
         -   Frequency (in Hz) of the line noise.
@@ -969,9 +967,7 @@ class PowerStandard(ProcMethod):
 
         return results
 
-    def get_results(
-        self, dimensions: Union[list[str], None] = None
-    ) -> NDArray:
+    def get_results(self, dimensions: Union[list[str], None] = None) -> NDArray:
         """Extracts and returns results.
 
         PARAMETERS
@@ -1163,7 +1159,7 @@ class PowerFOOOF(ProcMethod):
         -   The maximum number of peaks that will be fit.
 
         min_peak_height : int | float; default 0
-        -   Minimum threshold, in units of the input data, for detecing peaks.
+        -   Minimum threshold, in units of the input data, for detecting peaks.
 
         peak_threshold : int | float; 2
         -   Relative threshold, in units of standard deviation of the input data
@@ -1790,9 +1786,7 @@ class PowerFOOOF(ProcMethod):
                 if keep_peak == "y":
                     new_peak_params.append(peak)
                 else:
-                    new_peak_params.append(
-                        np.asarray([np.nan, np.nan, np.nan])
-                    )
+                    new_peak_params.append(np.asarray([np.nan, np.nan, np.nan]))
             else:
                 new_peak_params.append(peak)
 
@@ -1809,7 +1803,7 @@ class PowerFOOOF(ProcMethod):
         ----------
         results : dict[list]
         -   The results of all channels stored as lists of arrays, where each
-            array within a list correpsonds to the data of a single channel.
+            array within a list corresponds to the data of a single channel.
 
         RETURNS
         -------
@@ -2053,12 +2047,10 @@ class PowerFOOOF(ProcMethod):
 
         results["fband_names"] = list(self.freq_bands.keys()) * n_channs
         results["fband_lower_bounds"] = (
-            np.asarray(list(self.freq_bands.values()))[:, 0].tolist()
-            * n_channs
+            np.asarray(list(self.freq_bands.values()))[:, 0].tolist() * n_channs
         )
         results["fband_upper_bounds"] = (
-            np.asarray(list(self.freq_bands.values()))[:, 1].tolist()
-            * n_channs
+            np.asarray(list(self.freq_bands.values()))[:, 1].tolist() * n_channs
         )
 
         results["peak_central_freq"] = np.reshape(

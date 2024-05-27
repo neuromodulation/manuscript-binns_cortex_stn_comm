@@ -8,12 +8,11 @@ SaveObject
 METHODS
 -------
 confirm_overwrite
--   Asks the user to confirm whether a pre-existing file should be overwitten.
+-   Asks the user to confirm whether a pre-existing file should be overwritten.
 
 check_before_overwrite
 -   Checks whether a file exists at a specified filepath.
 """
-
 
 from copy import deepcopy
 import csv
@@ -50,7 +49,7 @@ class SaveObject:
 
 def confirm_overwrite(fpath: str) -> bool:
     """Asks the user to confirm whether a pre-existing file should be
-    overwitten.
+    overwritten.
 
     PARAMETERS
     ----------

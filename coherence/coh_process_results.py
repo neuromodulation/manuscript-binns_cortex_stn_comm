@@ -530,7 +530,7 @@ class PostProcess:
         RAISES
         ------
         UnavailableProcessingError
-        -   Raised if a requested variability measure is not suppoerted.
+        -   Raised if a requested variability measure is not supported.
         """
         supported_measures = ["std", "sem", "ci_"]
         for measure in measures:
@@ -562,9 +562,9 @@ class PostProcess:
                         self._populate_columns(attributes=[attribute_name])
                     else:
                         for group_idcs in idcs:
-                            self._results.at[
-                                group_idcs[0], attribute_name
-                            ] = None
+                            self._results.at[group_idcs[0], attribute_name] = (
+                                None
+                            )
 
     def _reset_var_measures(
         self,
@@ -714,12 +714,12 @@ class PostProcess:
                                 alpha=int(measure[3:]) / 100,
                                 axis=axis,
                             )
-                            self._results.at[
-                                idx, f"{results_name}_low"
-                            ] = value[0]
-                            self._results.at[
-                                idx, f"{results_name}_high"
-                            ] = value[1]
+                            self._results.at[idx, f"{results_name}_low"] = (
+                                value[0]
+                            )
+                            self._results.at[idx, f"{results_name}_high"] = (
+                                value[1]
+                            )
                             already_added = True
 
                         if not already_added:
@@ -957,7 +957,7 @@ class PostProcess:
             be averaged, and any variability measures computed on.
 
         group_keys : [list[str]]
-        -   Names of the attibutes in the results to use to group results that
+        -   Names of the attributes in the results to use to group results that
             will be averaged over.
 
         eligible_entries : dict | None; default None
@@ -1324,7 +1324,7 @@ class PostProcess:
             be subtracted.
 
         group_keys : [list[str]]
-        -   Names of the attibutes in the results to use to group results that
+        -   Names of the attributes in the results to use to group results that
             will be subtracted.
 
         eligible_entries : dict | None; default None
@@ -1539,7 +1539,7 @@ class PostProcess:
                 self._results.loc[idcs, key] = transformation(entries).tolist()
             except TypeError:
                 raise TypeError(
-                    f"Unable to appy the transformation '{method}' to the "
+                    f"Unable to apply the transformation '{method}' to the "
                     f"'{key}' results, possibly because they contain None "
                     "values."
                 ) from None
@@ -1569,9 +1569,7 @@ class PostProcess:
         transformation = self._get_transformation_function(method)
 
         var_attributes = [
-            f"{key}_{measure}"
-            for key in keys
-            for measure in self._var_measures
+            f"{key}_{measure}" for key in keys for measure in self._var_measures
         ]
         for var_attribute in var_attributes:
             if method == "absolute":
@@ -1587,12 +1585,12 @@ class PostProcess:
                 entries = np.array(entries[process_idcs])
 
                 try:
-                    self._results.loc[
-                        process_idcs, var_attribute
-                    ] = transformation(entries).tolist()
+                    self._results.loc[process_idcs, var_attribute] = (
+                        transformation(entries).tolist()
+                    )
                 except TypeError:
                     raise TypeError(
-                        f"Unable to appy the transformation '{method}' to the "
+                        f"Unable to apply the transformation '{method}' to the "
                         f"'{var_attribute}' results, possibly because they "
                         "contain None values."
                     ) from None
@@ -1924,9 +1922,9 @@ class PostProcess:
 
                 entry = np.array(self._results.at[idx, key])
 
-                self._results.at[
-                    idx, result_names[key_i]
-                ] = find_value_function(entry, axis=axis)
+                self._results.at[idx, result_names[key_i]] = (
+                    find_value_function(entry, axis=axis)
+                )
 
     def _find_index_of_values_of_interest(
         self,
@@ -1986,9 +1984,7 @@ class PostProcess:
                     ),
                 )
 
-                self._results.at[
-                    idx, result_names[key_i]
-                ] = data_index.tolist()
+                self._results.at[idx, result_names[key_i]] = data_index.tolist()
 
     def _find_index_in_nd_array(
         self,
@@ -2408,16 +2404,18 @@ class PostProcess:
         )
         for band_i, bounds in enumerate(bands.values()):
             for bound_val_i, bound_val in enumerate(bounds):
-                band_bound_idcs[
-                    :, band_i, bound_val_i
-                ] = self._find_index_in_nd_array(
-                    values=np.array(
-                        self._results.loc[
-                            process_idcs, isolate_dimension
-                        ].to_list()
-                    ),
-                    values_of_interest=np.full((len(process_idcs)), bound_val),
-                    axis_of_interest=1,
+                band_bound_idcs[:, band_i, bound_val_i] = (
+                    self._find_index_in_nd_array(
+                        values=np.array(
+                            self._results.loc[
+                                process_idcs, isolate_dimension
+                            ].to_list()
+                        ),
+                        values_of_interest=np.full(
+                            (len(process_idcs)), bound_val
+                        ),
+                        axis_of_interest=1,
+                    )
                 )
 
         return band_bound_idcs
@@ -2432,11 +2430,11 @@ class PostProcess:
         band_results_idx = 0
         for process_idx, row_idx in enumerate(process_idcs):
             for band_idcs in band_bound_idcs[process_idx]:
-                self._band_results.at[
-                    process_idx, isolate_dimension
-                ] = self._results.at[row_idx, isolate_dimension][
-                    band_idcs[0] : band_idcs[1] + 1
-                ]
+                self._band_results.at[process_idx, isolate_dimension] = (
+                    self._results.at[row_idx, isolate_dimension][
+                        band_idcs[0] : band_idcs[1] + 1
+                    ]
+                )
                 band_results_idx += 1
 
     def _compute_band_results(
@@ -2608,7 +2606,7 @@ class PostProcess:
             be z-scored.
 
         group_keys : [list[str]]
-        -   Names of the attibutes in the results to use to group results that
+        -   Names of the attributes in the results to use to group results that
             will be z-scored together.
 
         eligible_entries : dict | None; default None
@@ -2697,7 +2695,7 @@ class PostProcess:
             percentile should be found.
 
         group_keys : [list[str]]
-        -   Names of the attibutes in the results to use to group results whose
+        -   Names of the attributes in the results to use to group results whose
             percentile will be calculated together.
 
         percentile_interval : float; default 10.0
@@ -2793,9 +2791,9 @@ class PostProcess:
                 )
 
                 for entry_i, row_i in enumerate(idcs):
-                    self._results.at[
-                        row_i, f"{key}_percentiles"
-                    ] = percentiles[entry_i]
+                    self._results.at[row_i, f"{key}_percentiles"] = percentiles[
+                        entry_i
+                    ]
 
     def _percentile_of_score(
         self,
@@ -2888,7 +2886,7 @@ class PostProcess:
             be interpolated.
 
         group_keys : [list[str]]
-        -   Names of the attibutes in the results to use to group results whose
+        -   Names of the attributes in the results to use to group results whose
             interpolation will be calculated together.
 
         coords_key : str
@@ -3206,7 +3204,7 @@ class PostProcess:
             dimensions are Gaussianised across.
 
         group_keys : [list[str]]
-        -   Names of the attibutes in the results to use to group results whose
+        -   Names of the attributes in the results to use to group results whose
             percentile will be calculated together.
 
         coords_key : str
@@ -3727,9 +3725,7 @@ class PostProcess:
         pin_to_hemisphere: str | None,
     ) -> None:
         """Finds closest fibres (IDs and distances) to seeds."""
-        fibre_ids_column = (
-            f"closest_fibre_ids_{normalise_distance}_{seeds_key}"
-        )
+        fibre_ids_column = f"closest_fibre_ids_{normalise_distance}_{seeds_key}"
         fibre_distances_column = (
             f"smallest_fibre_distances_{normalise_distance}_{seeds_key}"
         )
@@ -3950,9 +3946,7 @@ class PostProcess:
             ask_before_overwrite = self._verbose
 
         save_dict(
-            to_save=self.results_as_dict(
-                sequester_to_dicts=sequester_to_dicts
-            ),
+            to_save=self.results_as_dict(sequester_to_dicts=sequester_to_dicts),
             fpath=fpath,
             ftype=ftype,
             ask_before_overwrite=ask_before_overwrite,

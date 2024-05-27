@@ -75,7 +75,7 @@ def standard_power_analysis(
     -   Whether or not to save the results of the analysis.
 
     ask_before_overwrite : bool
-    -   Whether to ask before overwiting files.
+    -   Whether to ask before overwriting files.
 
     RAISES
     ------
@@ -228,7 +228,7 @@ def fooof_analysis(
     -   Whether or not to save the results of the analysis.
 
     ask_before_overwrite : bool
-    -   Whether to ask before overwiting files.
+    -   Whether to ask before overwriting files.
     """
 
     ### Analysis setup
@@ -361,7 +361,7 @@ def ssd_analysis(
     -   Whether or not to save the results of the analysis.
 
     ask_before_overwrite : bool
-    -   Whether to ask before overwiting files.
+    -   Whether to ask before overwriting files.
 
     RAISES
     ------
