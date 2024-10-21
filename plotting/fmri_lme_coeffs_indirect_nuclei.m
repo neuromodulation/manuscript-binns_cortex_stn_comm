@@ -1,4 +1,4 @@
-%% Plot indirect pathway nuclei coloured according to fMRI-MIC LME coefficients (Figure 4B)
+%% Plot indirect pathway nuclei coloured according to fMRI-MIC LME coefficients (Figure 4b)
 
 repo_path = 'Path_to\Manuscript_repository';
 funcs_fpath = fullfile(repo_fpath, 'plotting\matlab_funcs');

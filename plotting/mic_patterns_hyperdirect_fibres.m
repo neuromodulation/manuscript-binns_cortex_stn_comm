@@ -1,4 +1,4 @@
-%% Plot hyperdirect fibres coloured according to MIC patterns (Figure 4A)
+%% Plot hyperdirect fibres coloured according to MIC patterns (Figure 4a)
 
 repo_path = 'Path_to\Manuscript_repository';
 funcs_fpath = fullfile(repo_fpath, 'plotting\matlab_funcs');
@@ -9,7 +9,7 @@ addpath(genpath('Path_to\leaddbs'));
 
 folderpath_analysis = 'Path_to\Project\Analysis\Results\BIDS_01_Berlin_Neurophys\sub-multi\ses-multi';
 
-%% Load the spatial pattern values and plot fibres (Figure 4A)
+%% Load the spatial pattern values and plot fibres
 
 fband = 'high_beta';  % low_beta, high_beta
 
