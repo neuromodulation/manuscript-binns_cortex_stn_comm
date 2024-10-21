@@ -1,19 +1,21 @@
-Scripts for plotting results.
+Scripts for plotting results and contact locations.
 
 The different files are:
+- "dbs_lfp_locations": plot DBS leads in the STN (Figure 2a)
+- "ecog_lfp_locations": plot ECoG contacts on the cortex (Figure 2a)
 - "fmri_lme_coeffs_indirect_nuclei": plot indirect pathway nuclei according to
-  fMRI-LME coefficients (Figure 4B)
-- "imcoh": plot ImCoh (Figure 3A & 3B)
+  fMRI-LME coefficients (Figure 4b)
+- "imcoh": plot ImCoh (Figure 3a & 3b)
 - "mic_patterns_hyperdirect_fibres": plot hyperdirect fibres coloured according
-  to MIC patterns (Figure 4A)
+  to MIC patterns (Figure 4a)
 - "mic_patterns": create interpolated MIC patterns and plot raw points (Figures
-  3A, S3)
-- "power": plot power (univariate and multivariate; Figure 2)
-- "ssd_patterns_dbs_contacts": plot SSD patterns for DBS contacts (Figure 2C)
+  3a, S7)
+- "power": plot power (univariate and multivariate; Figures 2, S1, & S2)
+- "ssd_patterns_dbs_contacts": plot SSD patterns for DBS contacts (Figure 2c)
 - "ssd_patterns": create interpolated SSD patterns and plot raw points (Figures
-  2B & S1)
-- "tde": plot time delay estimates (Figure 3D)
-- "trgc": plot TRGC (Figures 3C & S4)
+  2b, S3, & S4)
+- "tde": plot time delay estimates (Figure 3d)
+- "trgc": plot TRGC (Figures 3c, S5, & S6)
 
 There are 2 general types of files:
 - "MedOffOn": for comparing OFF therapy and ON levodopa results

@@ -59,7 +59,7 @@
     },
     "resample_Hz": 2000,
     "bootstrap": {
-        "n_bootstraps": 200,
+        "n_bootstraps": 400,
         "n_epochs_per_bootstrap": 30,
         "random_seed": 44
     }

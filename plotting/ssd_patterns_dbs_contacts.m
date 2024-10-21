@@ -1,4 +1,4 @@
-%% Plot SSD patterns for DBS contacts (Figure 2C)
+%% Plot SSD patterns for DBS contacts (Figure 2c)
 
 repo_path = 'Path_to\Manuscript_repository';
 funcs_fpath = fullfile(repo_fpath, 'plotting\matlab_funcs');
@@ -9,7 +9,7 @@ addpath(genpath('Path_to\leaddbs'));
 
 folderpath_analysis = 'Path_to\Project\Analysis\Results\BIDS_01_Berlin_Neurophys\sub-multi\ses-multi';
 
-%% SSD patterns MED OFF (Figure 2C)
+%% SSD patterns MED OFF
 
 results = readtable(fullfile(folderpath_analysis, 'ssd_patterns_low_beta_combined-MedOffOn.csv'));
 

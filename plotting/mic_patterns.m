@@ -1,4 +1,4 @@
-%% Create interpolated MIC patterns and plot raw points (Figures 3A, S3)
+%% Create interpolated MIC patterns and plot raw points (Figures 3a & S7)
 
 repo_path = 'Path_to\Manuscript_repository';
 addpath('Path_to\wjn_toolbox_tsbinns');
@@ -7,11 +7,11 @@ addpath(genpath('Path_to\leaddbs'));
 
 folderpath_analysis = 'Path_to\Project\Analysis\Results\BIDS_01_Berlin_Neurophys\sub-multi\ses-multi';
 
-%% OFF and ON averaged (Figure 3A)
+%% MED OFF and ON averaged (Figure 3a)
 
-fbands = ["alpha", "low_beta", "high_beta"];
+fbands = ["high_beta"];
 regions = ["cortex", "STN"];
-patterns_table = readtable(fullfile(folderpath_analysis, 'mic_topographies_cortex_STN.csv'));
+patterns_table = readtable(fullfile(folderpath_analysis, 'mic_topographies_cortex_STN_MedOffOn.csv'));
 
 for region_i = 1:length(regions)
     region = regions(region_i);
@@ -52,7 +52,12 @@ for region_i = 1:length(regions)
         end
 
         % interpolate patterns to mesh
-        wjn_heatmap(sprintf('MIC_%s_%s.nii', region, fband), coords, patterns - min(patterns), interp_mesh, [4, 4, 4])
+        heatmap_fname = sprintf('MIC_%s_%s_Med.nii', region, fband);
+        wjn_heatmap(heatmap_fname, coords, patterns - min(patterns), interp_mesh, [4, 4, 4])
+        % (above saves file in current directory, so move to figures directory)
+        movefile(heatmap_fname, sprintf('..\\figures\\%s', heatmap_fname));
+        movefile("s"+heatmap_fname, sprintf('..\\figures\\s%s', heatmap_fname));
+        movefile("z_s"+heatmap_fname, sprintf('..\\figures\\z_s%s', heatmap_fname));
 
         % plot locations of raw points
         figure
@@ -72,16 +77,16 @@ for region_i = 1:length(regions)
             view(5, 23)
         end
         camlight
-        exportgraphics(gcf, fullfile(repo_path, 'figures', sprintf('MIC_%s_%s.png', region, fband)), 'Resolution', 1000);
+        exportgraphics(gcf, fullfile(repo_path, 'figures', sprintf('MIC_%s_%s_Med.png', region, fband)), 'Resolution', 1000);
     end
 end
 
-%% OFF and ON separately (Figure S3)
+%% MED OFF and ON separately (Figure S7)
 
 fbands = ["high_beta"];
 regions = ["cortex", "STN"];
 meds = ["off", "on"];
-patterns_table = readtable(fullfile(folderpath_analysis, 'mic_topographies_cortex_STN.csv'));
+patterns_table = readtable(fullfile(folderpath_analysis, 'mic_topographies_cortex_STN_MedOffOn.csv'));
 
 for med_i = 1:length(meds)
     med = meds(med_i);
@@ -126,8 +131,14 @@ for med_i = 1:length(meds)
             end
     
             % interpolate patterns to mesh
-            wjn_heatmap(sprintf('MIC_%s_%s_%s.nii', region, fband, med), coords, patterns - min(patterns), interp_mesh, [4, 4, 4])
-    
+            heatmap_fname = sprintf('MIC_%s_%s_Med%s.nii', region, fband, med);
+            wjn_heatmap(heatmap_fname, coords, patterns - min(patterns), interp_mesh, [4, 4, 4])
+            % (above saves file in current directory, so move to figures directory)
+            movefile(heatmap_fname, sprintf('..\\figures\\%s', heatmap_fname));
+            movefile("s"+heatmap_fname, sprintf('..\\figures\\s%s', heatmap_fname));
+            movefile("z_s"+heatmap_fname, sprintf('..\\figures\\z_s%s', heatmap_fname));
+
+
             % plot locations of raw points
             figure
             hold on
@@ -146,7 +157,7 @@ for med_i = 1:length(meds)
                 view(5, 23)
             end
             camlight
-            exportgraphics(gcf, fullfile(repo_path, 'figures', sprintf('MIC_%s_%s_%s.png', region, fband, med)), 'Resolution', 1000);
+            exportgraphics(gcf, fullfile(repo_path, 'figures', sprintf('MIC_%s_%s_Med%s.png', region, fband, med)), 'Resolution', 1000);
         end
     end
 end
