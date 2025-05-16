@@ -1,6 +1,6 @@
 # manuscript-binns_cortex_stn_comm
 
-Code for the manuscript Binns *et al.* (Pre-print). DOI: [10.1101/2024.04.14.586969](https://doi.org/10.1101/2024.04.14.586969).
+Code for the manuscript Binns *et al.* (2025). *Nature Communications*. DOI: [10.1038/s41467-025-58825-z](https://doi.org/10.1038/s41467-025-58825-z).
 
 The repository has the following structure:
 - [processing](processing) - location of scripts for (pre)processing of data (view [README](processing/README.txt))
